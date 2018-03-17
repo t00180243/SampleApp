@@ -12,8 +12,7 @@ android:
     - build-tools-27.0.3
 
 script:
-   - gradle build connectedCheck --daemon
-   - ant debug install test
+   - mvn install -B
 
 
 
