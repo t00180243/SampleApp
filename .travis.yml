@@ -24,9 +24,9 @@ android:
       # use the latest revision of Android SDK Tools
      - tools
      - tools
-     - build-tools-$ANDROID_BUILD_TOOLS
+     - build-tools-27.0.3
 
-     - android-$ANDROID_API
+     - android-27
 
      - android-$EMULATOR_API_LEVEL
 
