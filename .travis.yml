@@ -1,14 +1,7 @@
 #TravisCI details
 language: android
 
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-cache:
-  directories:
-    - $HOME/gradle/caches/
-    - $HOME/gradle/wrapper/
-    - $HOME/android/build-cache
+
 
 android:
   components:
@@ -19,7 +12,8 @@ android:
     - build-tools-27.0.3
 
 script:
-   - gradle build connectedCheck
+   - gradle build connectedCheck --daemon
+   - ant debug install test
 
 
 
