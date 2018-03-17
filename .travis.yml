@@ -9,7 +9,8 @@ android:
     - tools
     - build-tools-27.0.3
 
-
+script:
+   - gradle build connectedCheck
 
 
 
