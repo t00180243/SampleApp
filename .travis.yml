@@ -1,6 +1,6 @@
 #TravisCI details
 language: android
-#sudo: false
+sudo: false
 jdk: oraclejdk8
 
 before_cache:
@@ -31,14 +31,13 @@ android:
      - android-$EMULATOR_API_LEVEL
 
      - extra-google-m2repository
-
+     - extra-android-support
      - extra-android-m2repository # for design library
 
-     - addon-google_apis-google-19 # google play services
+     - extra-google-google_play_services
 
-     - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
+     - sys-img-armeabi-v7a-android-27
 
-     - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
 
   licenses:
 
@@ -55,7 +54,7 @@ before_install:
 
 before_script:
  - android list sdk --extended --no-ui --all
- - echo "y" | android update sdk -a --no-ui --filter sys-img-armeabi-v7a-android-25,sys-img-x86_64-android-25
+ - echo no | android create avd --force --name test --target android-27 --abi armeabi-v7a
 # - echo "n" | android create avd --name myandroid25 -t "android-25"
  - android list targets
  #- echo no | android create avd --force -n test -t android-25
